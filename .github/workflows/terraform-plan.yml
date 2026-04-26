@@ -18,3 +18,5 @@ jobs:
     uses: ObscureOscillator/reusable-workflows/.github/workflows/terraform-plan.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_ACCESS_SECRET: ${{ secrets.AWS_ACCESS_SECRET }}
