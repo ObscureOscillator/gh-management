@@ -1,5 +1,6 @@
 locals {
   org_members = yamldecode(file("${path.module}/members.yaml")).members
+  org_teams   = yamldecode(file("${path.module}/teams.yaml")).teams
 }
 
 module "github_organization_members" {
@@ -10,6 +11,19 @@ module "github_organization_members" {
     username => {
       role                 = try(config.role, "member")
       downgrade_on_destroy = try(config.downgrade_on_destroy, false)
+    }
+  }
+}
+
+module "github_organization_teams" {
+  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-teams?ref=feat/add-teams"
+
+  teams = {
+    for team_name, config in local.org_teams :
+    team_name => {
+      description = try(config.description, "")
+      privacy     = try(config.privacy, "closed")
+      members     = try(config.members, {})
     }
   }
 }
