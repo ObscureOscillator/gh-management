@@ -15,7 +15,7 @@ permissions:
 jobs:
   terraform-plan:
     name: Terraform Plan
-    uses: ObscureOscillator/reusable-workflows/.github/workflows/terraform-plan.yml@v1.0.2
+    uses: ObscureOscillator/reusable-workflows/.github/workflows/terraform-plan.yml@v1.1.0
     with:
       environment: prod
     secrets:
