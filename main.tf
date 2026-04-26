@@ -16,7 +16,7 @@ module "github_organization_members" {
 }
 
 module "github_organization_teams" {
-  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-teams?ref=feat/add-teams"
+  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-teams?ref=main"
 
   teams = {
     for team_name, config in local.org_teams :
