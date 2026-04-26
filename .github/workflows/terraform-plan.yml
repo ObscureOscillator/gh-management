@@ -17,4 +17,4 @@ jobs:
     name: Terraform Plan
     uses: ObscureOscillator/reusable-workflows/.github/workflows/terraform-plan.yml@main
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
