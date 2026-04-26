@@ -1,3 +1,19 @@
+locals {
+  org_members = yamldecode(file("${path.module}/members.yaml")).members
+}
+
+module "github_organization_members" {
+  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-members?ref=5f86528d64280fc0b77a4ce1131914ac9694a492"
+
+  members = {
+    for username, config in local.org_members :
+    username => {
+      role                 = try(config.role, "member")
+      downgrade_on_destroy = try(config.downgrade_on_destroy, false)
+    }
+  }
+}
+
 module "github_organization" {
   source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization?ref=main"
 
