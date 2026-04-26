@@ -18,6 +18,8 @@ jobs:
   terraform-plan:
     name: Terraform Plan
     uses: ObscureOscillator/reusable-workflows/.github/workflows/terraform-apply.yml@main
+    with:
+      environment: prod
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
