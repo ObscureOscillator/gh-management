@@ -3,7 +3,7 @@ locals {
 }
 
 module "github_organization_members" {
-  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-members?ref=5f86528d64280fc0b77a4ce1131914ac9694a492"
+  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-members?ref=main"
 
   members = {
     for username, config in local.org_members :
