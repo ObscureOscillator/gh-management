@@ -4,7 +4,7 @@ module "github_organization" {
   organization = {
     billing_email = "me@jaredbloomer.com"
     display_name  = "ObscureOscillator"
-    description   = ""
+    description   = "Github Organization Management Tooling for the ObscureOscillator Organization"
 
     profile = {
       company          = null
