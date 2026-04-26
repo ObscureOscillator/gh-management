@@ -7,10 +7,10 @@ module "github_organization" {
     description   = ""
 
     profile = {
-      company  = null
-      blog     = null
-      email    = null
-      location = null
+      company          = null
+      blog             = null
+      email            = null
+      location         = null
       twitter_username = null
     }
 
