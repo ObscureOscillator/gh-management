@@ -1,0 +1,6 @@
+teams:
+  admins:
+    description: "Organization administrators"
+    privacy: closed
+    members:
+      jared-bloomer: maintainer
