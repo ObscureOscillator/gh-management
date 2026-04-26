@@ -1,0 +1,19 @@
+name: "Terraform: Plan"
+
+on:
+  pull_request:
+
+concurrency:
+  group: "terraform-plan"
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  terraform-plan:
+    name: Terraform Plan
+    uses: ObscureOscillator/reusable-workflows/.github/workflows/terraform-plan.yml@main
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
