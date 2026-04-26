@@ -1,0 +1,24 @@
+name: "Terraform: Plan And Apply"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: "terraform-apply"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  terraform-plan:
+    name: Terraform Plan
+    uses: ObscureOscillator/reusable-workflows/.github/workflows/terraform-apply.yml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_ACCESS_SECRET: ${{ secrets.AWS_ACCESS_SECRET }}
