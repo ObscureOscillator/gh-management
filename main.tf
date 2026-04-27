@@ -33,7 +33,7 @@ module "github_organization_teams" {
 }
 
 module "github_organization_repos" {
-  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-repos?ref=feat/add-repos"
+  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-repos?ref=main"
 
   repositories = local.org_repos
 }
