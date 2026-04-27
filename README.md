@@ -81,7 +81,8 @@ No providers.
 | ---- | ------ | ------- |
 | <a name="module_github_organization"></a> [github\_organization](#module\_github\_organization) | github.com/ObscureOscillator/TerraformModules//modules/github-organization | main |
 | <a name="module_github_organization_members"></a> [github\_organization\_members](#module\_github\_organization\_members) | github.com/ObscureOscillator/TerraformModules//modules/github-organization-members | main |
-| <a name="module_github_organization_teams"></a> [github\_organization\_teams](#module\_github\_organization\_teams) | github.com/ObscureOscillator/TerraformModules//modules/github-organization-teams | feat/add-teams |
+| <a name="module_github_organization_repos"></a> [github\_organization\_repos](#module\_github\_organization\_repos) | github.com/ObscureOscillator/TerraformModules//modules/github-organization-repos | main |
+| <a name="module_github_organization_teams"></a> [github\_organization\_teams](#module\_github\_organization\_teams) | github.com/ObscureOscillator/TerraformModules//modules/github-organization-teams | main |
 
 ## Resources
 
