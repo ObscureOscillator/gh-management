@@ -50,17 +50,17 @@ gh-management:
   # ── Environments ──────────────────────────────────────────────────────────
   environments:
     prod:
-      wait_timer: 30                # minutes before deployment (0–43200)
+      # wait_timer: 30                # minutes before deployment (0–43200)
       can_admins_bypass: false
-      prevent_self_review: true
+      # prevent_self_review: true
       reviewers:
         teams: [admins]             # team slugs (max 6 combined with users)
         users: [jared-bloomer]      # user logins
       deployment_branch_policy:
         protected_branches: true
         custom_branch_policies: false
-    staging:
-      wait_timer: 0
+    # staging:
+    #   wait_timer: 0
 
   # ── Security and analysis (GitHub Advanced Security) ──────────────────────
   # Requires GHAS licence for private repos; free for public repos.
