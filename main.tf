@@ -5,4 +5,5 @@ locals {
     for f in fileset("${path.module}/repos", "*.yaml") :
     yamldecode(file("${path.module}/repos/${f}"))
   ]...)
+  org_secrets = yamldecode(file("${path.module}/secrets.yaml")).secrets
 }
