@@ -1,6 +1,10 @@
 locals {
   org_members = yamldecode(file("${path.module}/members.yaml")).members
   org_teams   = yamldecode(file("${path.module}/teams.yaml")).teams
+  org_repos = merge([
+    for f in fileset("${path.module}/repos", "*.yaml") :
+    yamldecode(file("${path.module}/repos/${f}"))
+  ]...)
 }
 
 module "github_organization_members" {
@@ -26,6 +30,12 @@ module "github_organization_teams" {
       members     = try(config.members, {})
     }
   }
+}
+
+module "github_organization_repos" {
+  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-repos?ref=feat/add-repos"
+
+  repositories = local.org_repos
 }
 
 module "github_organization" {
