@@ -31,7 +31,6 @@ gh-management:
 
   # ── Security ──────────────────────────────────────────────────────────────
   web_commit_signoff_required: false
-  vulnerability_alerts: false
 
   # ── Pages ─────────────────────────────────────────────────────────────────
   # Uncomment to enable GitHub Pages.
