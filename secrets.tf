@@ -5,7 +5,7 @@ data "aws_ssm_parameter" "secrets" {
 }
 
 module "github_organization_secrets" {
-  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-secrets?ref=feat/add-gh-secrets"
+  source = "github.com/ObscureOscillator/TerraformModules//modules/github-organization-secrets?ref=main"
 
   secrets = {
     for name, config in local.org_secrets :
