@@ -6,12 +6,12 @@ gh-management:
   topics: []
   is_template: false
   archived: false
-  archive_on_destroy: false
+  archive_on_destroy: true
 
   # ── Features ──────────────────────────────────────────────────────────────
   has_issues: true
   has_discussions: false
-  has_projects: true
+  has_projects: false
   has_wiki: true
 
   # ── Merge strategies ──────────────────────────────────────────────────────
@@ -20,8 +20,8 @@ gh-management:
   allow_rebase_merge: true
   allow_auto_merge: false
   allow_forking: true
-  allow_update_branch: false
-  delete_branch_on_merge: false
+  allow_update_branch: true
+  delete_branch_on_merge: true
 
   # ── Merge commit message ───────────────────────────────────────────────────
   # squash_merge_commit_title: PR_TITLE | COMMIT_OR_PR_TITLE
@@ -43,24 +43,24 @@ gh-management:
 
   # ── Team access ───────────────────────────────────────────────────────────
   # Map of team slug -> permission: pull | triage | push | maintain | admin
-  # teams:
-  #   admins: admin
+  teams:
+    admins: admin
   #   developers: push
 
   # ── Environments ──────────────────────────────────────────────────────────
-  # environments:
-  #   production:
-  #     wait_timer: 30                # minutes before deployment (0–43200)
-  #     can_admins_bypass: false
-  #     prevent_self_review: true
-  #     reviewers:
-  #       teams: [admins]             # team slugs (max 6 combined with users)
-  #       users: [jared-bloomer]      # user logins
-  #     deployment_branch_policy:
-  #       protected_branches: true
-  #       custom_branch_policies: false
-  #   staging:
-  #     wait_timer: 0
+  environments:
+    prod:
+      wait_timer: 30                # minutes before deployment (0–43200)
+      can_admins_bypass: false
+      prevent_self_review: true
+      reviewers:
+        teams: [admins]             # team slugs (max 6 combined with users)
+        users: [jared-bloomer]      # user logins
+      deployment_branch_policy:
+        protected_branches: true
+        custom_branch_policies: false
+    staging:
+      wait_timer: 0
 
   # ── Security and analysis (GitHub Advanced Security) ──────────────────────
   # Requires GHAS licence for private repos; free for public repos.
